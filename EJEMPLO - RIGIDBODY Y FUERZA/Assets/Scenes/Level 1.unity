@@ -477,30 +477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 35aca8e8f284bdc428de237fe4db65c2, type: 3}
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: BypassReverbZones
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 40634637, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5361453753080057226, guid: 9427caa69c4315f4e8b2ffdfcd05e223, type: 3}
       propertyPath: m_RootOrder
       value: 5

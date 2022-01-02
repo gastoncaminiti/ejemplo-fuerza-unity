@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    //VARIABLES
+    //CONFIG VARIABLES
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 45f;
+    [SerializeField] AudioClip movementSFX;
+    //REFERENCE VARIABLES
     private Rigidbody myRigidbody;
     private AudioSource myAudioSource;
     void Start()
@@ -15,7 +17,6 @@ public class Movement : MonoBehaviour
         myAudioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessThrust();
@@ -29,7 +30,7 @@ public class Movement : MonoBehaviour
             myRigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if (!myAudioSource.isPlaying)
             {
-                myAudioSource.Play();
+                myAudioSource.PlayOneShot(movementSFX);
             }
         }
         else
