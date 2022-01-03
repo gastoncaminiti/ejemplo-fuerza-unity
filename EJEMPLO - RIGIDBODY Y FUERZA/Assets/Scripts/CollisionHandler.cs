@@ -9,20 +9,25 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] ParticleSystem winParticle;
     [SerializeField] ParticleSystem explodeParticle;
-    
+
     //REFERENCE VARIABLES
     private AudioSource myAudioSource;
 
     bool isTransitioning = false;
+    bool isCollisionDisable = false;
 
     void Start()
     {
         myAudioSource = GetComponent<AudioSource>();
     }
 
+    private void Update() {
+        DebugInput();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
-        if (isTransitioning) { return; }
+        if (isTransitioning || isCollisionDisable) { return; }
 
         switch (other.gameObject.tag)
         {
@@ -83,5 +88,18 @@ public class CollisionHandler : MonoBehaviour
     private int GetCurretSceneIndex()
     {
         return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void DebugInput()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            isCollisionDisable = !isCollisionDisable;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
     }
 }
