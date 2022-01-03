@@ -6,6 +6,10 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private float delayTime = 1f;
     [SerializeField] AudioClip winSFX;
     [SerializeField] AudioClip explodeSFX;
+
+    [SerializeField] ParticleSystem winParticle;
+    [SerializeField] ParticleSystem explodeParticle;
+    
     //REFERENCE VARIABLES
     private AudioSource myAudioSource;
 
@@ -38,6 +42,7 @@ public class CollisionHandler : MonoBehaviour
     {
         isTransitioning = true;
         DisablePlayerControl();
+        explodeParticle.Play();
         myAudioSource.Stop();
         myAudioSource.PlayOneShot(explodeSFX);
         Invoke("ReloadLevel", delayTime);
@@ -47,6 +52,7 @@ public class CollisionHandler : MonoBehaviour
     {
         isTransitioning = true;
         DisablePlayerControl();
+        winParticle.Play();
         myAudioSource.Stop();
         myAudioSource.PlayOneShot(winSFX);
         Invoke("LoadNextLevel", delayTime);
